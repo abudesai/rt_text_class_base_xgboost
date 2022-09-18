@@ -1,5 +1,13 @@
 [
   {
+    "name": "booster",
+    "short_desc": "boosting_type options: gbtree, dart, gblinear",
+    "default": "gbtree",
+    "type": "categorical",
+    "categorical_vals": ["gbtree", "dart", "gblinear"],
+    "run_HPO": true
+  },
+  {
     "name": "eta",
     "short_desc": "Step size shrinkage used in update to prevents overfitting - alias learning rate",
     "default": 0.3,

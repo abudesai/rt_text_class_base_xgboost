@@ -1,25 +1,24 @@
 
-artifacts/
-hpt_outputs/
-training/
-testing/
 local_test/ml_vol/
 **/test_results/
 **/artifacts
 ml_vol/outputs/
+**/ml_vol/**/*.txt
 **/examples/**/*.txt
-outputs/
 
+rt_algorithms/text_classification/ml_vol
 
+artifacts/
+hpt_results/
 
 **/*_no_hpt.csv
 **/*_with_hpt.csv
-**/model_*_*_*.json
-
+ml_vol/**/model_*_*.json
 
 docker-compose.yaml
 build_and_push.sh
 venv/
+
 
 __pycache__/
 *.py[cod]
@@ -30,10 +29,6 @@ __pycache__/
 .venv
 env/
 venv/
-ENV/ 
+ENV/
 env.bak/
 venv.bak/
-
-
-
-.idea

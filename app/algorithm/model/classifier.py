@@ -9,17 +9,26 @@ from xgboost import XGBClassifier
 
 
 model_fname = "model.save"
-MODEL_NAME = "text_class_xgboost"
+MODEL_NAME = "text_class_base_xgboost"
 
 
 class Classifier(): 
     
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, booster="gbtree", eta=0.3, gamma=0.0, max_depth=6, **kwargs) -> None:
+        self.booster = booster
+        self.eta = eta
+        self.gamma = gamma
+        self.max_depth = max_depth
         self.model = self.build_model(**kwargs)     
         
         
     def build_model(self, **kwargs): 
-        model = XGBClassifier(**kwargs)
+        model = XGBClassifier(
+            booster = self.booster,
+            eta = self.eta,
+            gamma = self.gamma,
+            max_depth = self.max_depth,
+            **kwargs)
         return model
     
     
